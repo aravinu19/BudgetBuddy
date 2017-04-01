@@ -41,24 +41,27 @@ public class Main4Activity extends AppCompatActivity {
 
         Calendar cal = Calendar.getInstance();
 
-
+        String dateStr = "1/04/2017";
 
         final String[] date= new String[1];
 
-//        SimpleDateFormat curFormater = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat curFormater = new SimpleDateFormat("dd/MM/yyyy");
         try {
-//            Date dateObj = curFormater.parse(dateStr);
+            Date dateObj = curFormater.parse(dateStr);
             SimpleDateFormat postFormater = new SimpleDateFormat("MMMM-dd,yyyy");
-            SimpleDateFormat ne = new SimpleDateFormat("MM,yyyy");
-            date[1]= ne.format(cal.getTime());
+//
 
             date[0] = postFormater.format(cal.getTime());
-            Log.d("Aravi","Date check :"+date[0]);
+            Log.d("Aravi","Date check :"+date[1]);
         }
         catch (Exception e){}
 
         t6.setText("Expense Of the Day ("+date[0]+")");
-
+        try{
+            SimpleDateFormat ne = new SimpleDateFormat("MM,yyyy");
+            date[1]= ne.format(cal.getTime());
+        }
+        catch (Exception e){}
 
         s = (Button)findViewById(R.id.su);
         s.setOnClickListener(new View.OnClickListener() {
