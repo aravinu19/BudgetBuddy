@@ -1,6 +1,7 @@
 package com.ivara.aravi.budgetbuddy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,7 @@ public class Main4Activity extends AppCompatActivity {
 
     TextView t1,t2,t3,t4,t5,t6;
     Button s;
+    ImageButton b;
 
 
     @Override
@@ -30,7 +33,7 @@ public class Main4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
-
+        b = (ImageButton)findViewById(R.id.eim1);
 
         t1 = (TextView)findViewById(R.id.food);
         t2 = (TextView)findViewById(R.id.trans);
@@ -43,7 +46,7 @@ public class Main4Activity extends AppCompatActivity {
 
         String dateStr = "1/04/2017";
 
-        final String[] date= new String[1];
+        final String[] date= new String[10];
 
         SimpleDateFormat curFormater = new SimpleDateFormat("dd/MM/yyyy");
         try {
@@ -62,6 +65,13 @@ public class Main4Activity extends AppCompatActivity {
             date[1]= ne.format(cal.getTime());
         }
         catch (Exception e){}
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Main5Activity.class));
+            }
+        });
 
         s = (Button)findViewById(R.id.su);
         s.setOnClickListener(new View.OnClickListener() {
