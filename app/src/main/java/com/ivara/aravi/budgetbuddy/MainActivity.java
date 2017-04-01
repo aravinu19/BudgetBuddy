@@ -3,7 +3,9 @@ package com.ivara.aravi.budgetbuddy;
         import android.app.Activity;
         import android.app.AlarmManager;
         import android.app.PendingIntent;
+        import android.content.Context;
         import android.content.Intent;
+        import android.content.SharedPreferences;
         import android.support.v7.app.*;
         import android.os.Bundle;
         import android.view.View;
@@ -37,64 +39,31 @@ public class MainActivity extends Activity {
 
         c.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                try
-                {
-                    File filei = new File("/sdcard/Android", "baran");
-                    FileReader fp = new FileReader(filei);
-                    BufferedReader br = new BufferedReader(fp);
-                    File filep = new File("/sdcard/Android", "baran.usr");
-                    FileReader fpp = new FileReader(filep);
-                    BufferedReader brp = new BufferedReader(fpp);
-                    File fileu = new File("/sdcard/Android", "baran.psk");
-                    FileReader fpu = new FileReader(fileu);
-                    BufferedReader bru = new BufferedReader(fpu);
-                    String c1 = t1.getText().toString();
-                    String c2 = t2.getText().toString();
+            public void onClick(View v) {
+                String em1 = t1.getText().toString().trim();
+                String pw1 = t2.getText().toString().trim();
 
-                    String s1 = br.readLine().toString();
-                    String s2 = brp.readLine().toString();
-                    String s3 = bru.readLine().toString();
-                    System.out.println(s1+"\n"+s2+"\n"+s3);
-                    System.out.println("Typed Data:"+c1+"\n"+c2+"\n"+s1.compareTo(c1)+"\n"+c2.compareTo(s2));
-                    int g,f,k = 0;
-                    g=s1.compareTo(c1);
-                    f=s2.compareTo(c2);
-                    System.out.println("Aravi Debuger"+g+"b"+f+"bb"+c2+"\n"+k);
-                    if(g==k)
-                    {
-                        k=1;
-                    }
-                    if(k==1) {
-                        Toast.makeText(MainActivity.this, s1 + " Login Successful", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(MainActivity.this,inter.class);
-                        startActivity(intent);
+                SharedPreferences pref = getSharedPreferences("Savedlogin", Context.MODE_PRIVATE);
 
-                        //Notification Activity for Budget Buddy !!!
-//                        Calendar cal = Calendar.getInstance();
-//                        cal.set(Calendar.HOUR_OF_DAY,20);
-//                        cal.set(Calendar.MINUTE,30);
-//
-//                        Intent nt = new Intent(getApplicationContext(),ntinter.class);
-//                        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),100,nt,PendingIntent.FLAG_UPDATE_CURRENT);
-//                        AlarmManager nti = (AlarmManager)getSystemService(ALARM_SERVICE);
-//                        nti.setRepeating(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+                String em2 = pref.getString("Email","");
 
-                    }
-                    else
-                    {
-                        Toast.makeText(MainActivity.this,s2+" Login Credentials Mismatch",Toast.LENGTH_LONG).show();
-                    }
+                String pw2 = pref.getString("pass","");
 
+                String uname = pref.getString("uname","");
 
+                if (em1.equalsIgnoreCase(em2) && pw1.equalsIgnoreCase(pw2)) {
+                    Toast.makeText(getApplicationContext(), "Hai " + uname + " Buddy , It's Nice to See !", Toast.LENGTH_SHORT).show();
+
+                   checkdata();
                 }
-                catch (IOException e)
+                else
                 {
-                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(),"login Credentials Mismatch !!!",Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
+
+
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,4 +72,25 @@ public class MainActivity extends Activity {
             }
         });
     }
+    public void checkdata()
+    {
+        SharedPreferences spref = getSharedPreferences("MonthlyStaticExpense", Context.MODE_PRIVATE);
+        String test = spref.getString("datatest", "");
+        if (test.equalsIgnoreCase("yes")) {
+            startActivity(new Intent(getApplicationContext(), Main4Activity.class));
+        }
+        else
+        {
+            startActivity(new Intent(getApplicationContext(), inter.class));
+        }
+    }
 }
+//Notification Activity for Budget Buddy !!!
+//                        Calendar cal = Calendar.getInstance();
+//                        cal.set(Calendar.HOUR_OF_DAY,20);
+//                        cal.set(Calendar.MINUTE,30);
+//
+//                        Intent nt = new Intent(getApplicationContext(),ntinter.class);
+//                        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),100,nt,PendingIntent.FLAG_UPDATE_CURRENT);
+//                        AlarmManager nti = (AlarmManager)getSystemService(ALARM_SERVICE);
+//                        nti.setRepeating(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);

@@ -1,7 +1,10 @@
 package com.ivara.aravi.budgetbuddy;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +15,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Main4Activity extends AppCompatActivity {
 
@@ -25,64 +30,73 @@ public class Main4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
+
+
         t1 = (TextView)findViewById(R.id.food);
         t2 = (TextView)findViewById(R.id.trans);
         t3 = (TextView)findViewById(R.id.shop);
         t4 = (TextView)findViewById(R.id.rc);
         t5 = (TextView)findViewById(R.id.eta);
         t6 = (TextView)findViewById(R.id.dt);
+
+        Calendar cal = Calendar.getInstance();
+
+
+
+        final String[] date= new String[1];
+
+//        SimpleDateFormat curFormater = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+//            Date dateObj = curFormater.parse(dateStr);
+            SimpleDateFormat postFormater = new SimpleDateFormat("MMMM-dd,yyyy");
+            SimpleDateFormat ne = new SimpleDateFormat("MM,yyyy");
+            date[1]= ne.format(cal.getTime());
+
+            date[0] = postFormater.format(cal.getTime());
+            Log.d("Aravi","Date check :"+date[0]);
+        }
+        catch (Exception e){}
+
+        t6.setText("Expense Of the Day ("+date[0]+")");
+
+
         s = (Button)findViewById(R.id.su);
         s.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
+
                 int f = Integer.parseInt(t1.getText().toString());
                 int t = Integer.parseInt(t1.getText().toString());
                 int sp = Integer.parseInt(t1.getText().toString());
                 int mrc = Integer.parseInt(t1.getText().toString());
                 int etn = Integer.parseInt(t1.getText().toString());
-                Calendar cal = Calendar.getInstance();
-                String d = cal.getTime().toString();
+
                 int expofday = f+t+sp+mrc+etn;
-                t6.setText("Expense Of the Day ("+d+")");
-                try
-                {
-                    File fd = new File("sdcard/Android", "fd.eslock");
-                    FileWriter fwfd = new FileWriter(fd);
-                    BufferedWriter brfd = new BufferedWriter(fwfd);
-                    brfd.write(f);
-                    brfd.close();
-                    File ft = new File("sdcard/Android", "ftrans.eslock");
-                    FileWriter fwft = new FileWriter(ft);
-                    BufferedWriter brft = new BufferedWriter(fwft);
-                    brft.write(t);
-                    brft.close();
-                    File fsp = new File("sdcard/Android", "fsp.eslock");
-                    FileWriter fwsp = new FileWriter(fsp);
-                    BufferedWriter brsp = new BufferedWriter(fwsp);
-                    brsp.write(sp);
-                    brsp.close();
-                    File fmrc = new File("sdcard/Android", "fmobrc.eslock");
-                    FileWriter fwmrc = new FileWriter(fd);
-                    BufferedWriter brmrc = new BufferedWriter(fwfd);
-                    brfd.write(mrc);
-                    brfd.close();
-                    File fet = new File("sdcard/Android", "fetn.eslock");
-                    FileWriter fetn = new FileWriter(fet);
-                    BufferedWriter bret = new BufferedWriter(fetn);
-                    brfd.write(etn);
-                    brfd.close();
-                    File fexp = new File("sdcard/Android", "fd.eslock");
-                    FileWriter fwexp = new FileWriter(fexp);
-                    BufferedWriter brexp = new BufferedWriter(fwexp);
-                    brfd.write(expofday);
-                    brfd.close();
 
+                SharedPreferences pref = getSharedPreferences("Expense-"+date[0], Context.MODE_PRIVATE);
+                SharedPreferences.Editor set = pref.edit();
+                set.putInt("Food",f);
+                set.putInt("Transport",t);
+                set.putInt("Shopping",sp);
+                set.putInt("MobileRC",mrc);
+                set.putInt("Entertainment",etn);
+                set.putInt("ExpenseOfDay",expofday);
+                set.apply();
 
-                }
-                catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
+                SharedPreferences spe1 = getSharedPreferences("ExpenseTotal-"+date[1],Context.MODE_PRIVATE);
+                int tp = spe1.getInt("Total",0);
+                expofday=tp+expofday;
+
+                SharedPreferences spe = getSharedPreferences("ExpenseTotal-"+date[1],Context.MODE_PRIVATE);
+
+                SharedPreferences.Editor set1 = spe.edit();
+                set1.putInt("Total",expofday);
+                set1.apply();
+
+                Toast.makeText(getApplicationContext(),"Data of the Day" +date[0]+" is Saved ! Plz Come Back Tomorrow!!",Toast.LENGTH_LONG).show();
 
             }
         });

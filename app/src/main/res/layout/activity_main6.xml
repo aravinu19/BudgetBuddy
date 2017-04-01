@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ivara.aravi.budgetbuddy.Main6Activity">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Expense Of the Day"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/mn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Month"
+        android:inputType="text"
+        android:layout_below="@+id/dy"
+        android:layout_alignLeft="@+id/textView13"
+        android:layout_alignStart="@+id/textView13" />
+
+    <EditText
+        android:id="@+id/yr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mn"
+        android:layout_alignStart="@+id/mn"
+        android:layout_below="@+id/mn"
+        android:layout_marginTop="37dp"
+        android:ems="10"
+        android:hint="YEAR"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/yr"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:text="Button" />
+
+    <EditText
+        android:id="@+id/dy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mn"
+        android:layout_alignStart="@+id/mn"
+        android:layout_below="@+id/textView13"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Day"
+        android:inputType="number" />
+</RelativeLayout>

@@ -88,17 +88,6 @@
         android:layout_alignLeft="@+id/peb"
         android:layout_alignStart="@+id/peb" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView12"
-        android:layout_alignStart="@+id/textView12"
-        android:layout_below="@+id/hrent"
-        android:layout_marginTop="53dp"
-        android:text="Other Monthly Expenses (Rs.):"
-        android:textSize="18sp" />
-
     <EditText
         android:id="@+id/peb"
         android:layout_width="100dp"
@@ -110,13 +99,24 @@
         android:ems="10"
         android:inputType="number" />
 
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EB Bill (Rs.)"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/peb"
+        android:layout_alignBottom="@+id/peb"
+        android:layout_toLeftOf="@+id/textView9"
+        android:layout_toStartOf="@+id/textView9" />
+
     <Button
         android:id="@+id/smit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/peb"
+        android:text="Submit"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Submit" />
+        android:layout_marginBottom="21dp" />
 
 </RelativeLayout>

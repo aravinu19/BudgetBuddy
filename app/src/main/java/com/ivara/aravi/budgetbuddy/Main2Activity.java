@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.*;
 import android.os.Bundle;
 import android.view.View;
@@ -39,43 +40,33 @@ public class Main2Activity extends Activity {
             @Override
             public void onClick(View view) {
                 if(t1.getText()!=null && t2.getText()!=null && t3.getText()!=null) {
-                    String s1 = t1.getText().toString();
+                    String s1 = t1.getText().toString().trim();
                     String s2 = t2.getText().toString();
-                    String s3 = t3.getText().toString();
-                    try {
-                        File filei = new File("/sdcard/Android", "baran");
-                        File filep = new File("/sdcard/Android","baran.usr");
-                        File fileU = new File("/sdcard/Android","baran.psk");
-                        FileWriter fw = new FileWriter(filei);
-                        BufferedWriter bw = new BufferedWriter(fw);
-                        FileWriter fwp = new FileWriter(filep);
-                        BufferedWriter bwp = new BufferedWriter(fwp);
-                        FileWriter fwu = new FileWriter(fileU);
-                        BufferedWriter bwu = new BufferedWriter(fwu);
-                        bw.write(s1);
-                        bwp.write(s2);
-                        bwu.write(s3);
-                        bw.close();
-                        bwp.close();
-                        bwu.close();
-                        Toast.makeText(Main2Activity.this,"Registration SuccessFul",Toast.LENGTH_LONG).show();
+                    String s3 = t3.getText().toString().trim();
 
-                        File in1 = new File("sdcard/Android","in.eslock");
-                        boolean deleted = in1.delete();
+                    SharedPreferences spref = getSharedPreferences("Savedlogin",Context.MODE_PRIVATE);
 
-                        Intent in = new Intent(Main2Activity.this,MainActivity.class);
-                        startActivity(in);
+                    SharedPreferences.Editor set = spref.edit();
+                    set.putString("Email",s1);
+                    set.putString("uname",s2);
+                    set.putString("pass",s3);
+                    set.apply();
 
-                    } catch (FileNotFoundException e) {
-                        System.out.println("Exception is "+e);
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        System.out.println("Exception is "+e);
-
-                        e.printStackTrace();
+                    SharedPreferences pref = getSharedPreferences("MonthlyStaticExpense",Context.MODE_PRIVATE);
+                    String test = pref.getString("datatest","");
+                    if (test.equalsIgnoreCase("yes"))
+                    {
+                        SharedPreferences.Editor del = pref.edit();
+                        del.clear().commit();
+                        del.apply();
                     }
+                    Toast.makeText(getApplicationContext(),"Registration Successful !",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
-
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"All fields are necessary !",Toast.LENGTH_SHORT).show();
                 }
             }
         });
