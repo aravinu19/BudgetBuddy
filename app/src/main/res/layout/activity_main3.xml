@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context="com.ivara.aravi.budgetbuddy.Main3Activity">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Details Form"
+        android:textSize="24sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView9"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="33dp"
+        android:text="Monthly Income (Rs.):"
+        android:textSize="18sp"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/inc"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_alignBaseline="@+id/textView10"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_toEndOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView10"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_below="@+id/inc"
+        android:layout_marginTop="25dp"
+        android:text="Living in Rental Home :"
+        android:textSize="18sp"
+        android:visibility="visible" />
+
+    <Switch
+        android:id="@+id/s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/inc"
+        android:layout_alignStart="@+id/inc"
+        android:layout_alignTop="@+id/textView12"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/rent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/hrent"
+        android:layout_alignBottom="@+id/hrent"
+        android:layout_alignLeft="@+id/textView12"
+        android:layout_alignStart="@+id/textView12"
+        android:text="Monthly Home Rent(Rs.):"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/hrent"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_below="@+id/s1"
+        android:layout_alignLeft="@+id/peb"
+        android:layout_alignStart="@+id/peb" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView12"
+        android:layout_alignStart="@+id/textView12"
+        android:layout_below="@+id/hrent"
+        android:layout_marginTop="53dp"
+        android:text="Other Monthly Expenses (Rs.):"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/peb"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hrent"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/textView9"
+        android:layout_toRightOf="@+id/textView9"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/smit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/peb"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Submit" />
+
+</RelativeLayout>
