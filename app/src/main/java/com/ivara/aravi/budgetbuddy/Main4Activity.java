@@ -55,7 +55,7 @@ public class Main4Activity extends AppCompatActivity {
 //
 
             date[0] = postFormater.format(cal.getTime());
-            Log.d("Aravi","Date check :"+date[1]);
+            Log.d("Aravi","Date check :"+date[0]);
         }
         catch (Exception e){}
 
@@ -63,6 +63,7 @@ public class Main4Activity extends AppCompatActivity {
         try{
             SimpleDateFormat ne = new SimpleDateFormat("MM,yyyy");
             date[1]= ne.format(cal.getTime());
+            Log.d("Aravi","Date check :"+date[1]);
         }
         catch (Exception e){}
 

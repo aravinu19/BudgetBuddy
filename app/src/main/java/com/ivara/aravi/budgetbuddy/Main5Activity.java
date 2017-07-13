@@ -25,7 +25,7 @@ public class Main5Activity extends AppCompatActivity {
         sh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences spe1 = getSharedPreferences("ExpenseTotal-04,2017", Context.MODE_PRIVATE);
+                SharedPreferences spe1 = getSharedPreferences("ExpenseTotal-07,2017", Context.MODE_PRIVATE);
                 int tp = spe1.getInt("Total",0);
                 Toast.makeText(getApplicationContext(),"Expense Total = "+tp,Toast.LENGTH_LONG).show();
             }

@@ -39,7 +39,7 @@
         android:layout_marginTop="37dp"
         android:ems="10"
         android:hint="YEAR"
-        android:inputType="number" />
+        android:inputType="text" />
 
     <Button
         android:id="@+id/show"
@@ -48,7 +48,7 @@
         android:layout_below="@+id/yr"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="63dp"
-        android:text="Button" />
+        android:text="Get Expense" />
 
     <EditText
         android:id="@+id/dy"
@@ -60,5 +60,5 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Day"
-        android:inputType="number" />
+        android:inputType="text" />
 </RelativeLayout>

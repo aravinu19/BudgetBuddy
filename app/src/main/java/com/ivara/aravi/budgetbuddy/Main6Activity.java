@@ -31,12 +31,15 @@ public class Main6Activity extends AppCompatActivity {
         sh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String m = t1.getText().toString().toUpperCase();
+                String m = t1.getText().toString();
+                StringBuilder builder = new StringBuilder(m);
+                builder.setCharAt(0,Character.toUpperCase(builder.charAt(0)));
+                m = builder.toString();
                 String y = t2.getText().toString();
                 String d = t3.getText().toString();
 
-                SharedPreferences spe1 = getSharedPreferences("ExpenseTotal-"+m+","+y, Context.MODE_PRIVATE);
-                String data = spe1.getString("ExpenseOfDay","");
+                SharedPreferences spe1 = getSharedPreferences("Expense-"+m+"-"+d+","+y, Context.MODE_PRIVATE);
+                int data = spe1.getInt("ExpenseOfDay",0);
 
                 Toast.makeText(getApplicationContext(),"Expense of "+d+"-"+m+"-"+y+" is "+data,Toast.LENGTH_LONG).show();
             }

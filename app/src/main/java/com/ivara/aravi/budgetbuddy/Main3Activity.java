@@ -25,6 +25,7 @@ public class Main3Activity extends AppCompatActivity {
     Switch on;
 
     final int[] home = new int[1];
+    final int[] ck = new int[1];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,8 @@ public class Main3Activity extends AppCompatActivity {
         t2.setVisibility(t2.INVISIBLE);
         t4.setVisibility(t4.INVISIBLE);
 
+        ck[0] = 0;
+
 
         on.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -50,7 +53,7 @@ public class Main3Activity extends AppCompatActivity {
                else {
                    t2.setVisibility(t2.INVISIBLE);
                    t4.setVisibility(t4.INVISIBLE);
-                   home[0]=0;
+                   ck[0]=1;
 
                }
             }
@@ -61,8 +64,16 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int income=Integer.parseInt(t1.getText().toString());
-                home[0] = Integer.parseInt(t2.getText().toString());
-                int ebbill=Integer.parseInt(t3.getText().toString());
+                if(ck[0]==1)
+                {
+                    home[0] = Integer.parseInt(t2.getText().toString());
+                }
+                else
+                {
+                    home[0] = 0;
+                }
+
+                int ebbill=Integer.valueOf(t3.getText().toString());
 
                 int mconst = home[0] + ebbill;
 

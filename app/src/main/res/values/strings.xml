@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BudgetBuddy</string>
+    <string name="user_name">User Name</string>
+    <string name="login">LOGIN</string>
+    <string name="or">OR</string>
+    <string name="register">REGISTER</string>
+    <string name="secure_login">Secure Login</string>
+    <string name="password">password</string>
 </resources>

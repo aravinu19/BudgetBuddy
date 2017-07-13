@@ -45,14 +45,14 @@ public class MainActivity extends Activity {
 
                 SharedPreferences pref = getSharedPreferences("Savedlogin", Context.MODE_PRIVATE);
 
-                String em2 = pref.getString("Email","");
+                String em2 = pref.getString("uname","");
 
                 String pw2 = pref.getString("pass","");
 
-                String uname = pref.getString("uname","");
+                //String uname = pref.getString("uname","");
 
                 if (em1.equalsIgnoreCase(em2) && pw1.equalsIgnoreCase(pw2)) {
-                    Toast.makeText(getApplicationContext(), "Hai " + uname + " Buddy , It's Nice to See !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Hai " + em2 + ", It's Nice to See !", Toast.LENGTH_SHORT).show();
 
                    checkdata();
                 }
