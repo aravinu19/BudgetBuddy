@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
+    android:background="@drawable/remem"
     tools:context="com.ivara.aravi.budgetbuddy.Main3Activity">
 
     <TextView
@@ -14,7 +15,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-        android:text="Details Form"
+        android:text="@string/details_form"
+        android:textColor="@color/bg_screen2"
         android:textSize="24sp"
         android:visibility="visible" />
 
@@ -28,7 +30,8 @@
         android:layout_marginLeft="14dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="33dp"
-        android:text="Monthly Income (Rs.):"
+        android:text="@string/monthly_income_rs"
+        android:textColor="@color/bg_screen3"
         android:textSize="18sp"
         android:visibility="visible" />
 
@@ -36,11 +39,12 @@
         android:id="@+id/inc"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
         android:layout_alignBaseline="@+id/textView10"
         android:layout_alignBottom="@+id/textView10"
-        android:layout_toEndOf="@+id/textView9" />
+        android:layout_toEndOf="@+id/textView9"
+        android:layout_toRightOf="@+id/textView9"
+        android:ems="10"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView12"
@@ -50,7 +54,8 @@
         android:layout_alignStart="@+id/textView10"
         android:layout_below="@+id/inc"
         android:layout_marginTop="25dp"
-        android:text="Living in Rental Home :"
+        android:text="@string/living_in_rental_home"
+        android:textColor="@color/bg_screen3"
         android:textSize="18sp"
         android:visibility="visible" />
 
@@ -63,6 +68,10 @@
         android:layout_alignTop="@+id/textView12"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:textColor="@color/bg_screen2"
+        android:textColorHighlight="@color/bg_screen2"
+        android:textColorHint="@color/bg_screen2"
+        android:textColorLink="@color/bg_screen2"
         android:textSize="18sp"
         android:visibility="visible" />
 
@@ -74,7 +83,8 @@
         android:layout_alignBottom="@+id/hrent"
         android:layout_alignLeft="@+id/textView12"
         android:layout_alignStart="@+id/textView12"
-        android:text="Monthly Home Rent(Rs.):"
+        android:text="@string/monthly_home_rent_rs"
+        android:textColor="@color/bg_screen3"
         android:textSize="18sp" />
 
     <EditText
@@ -103,20 +113,23 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EB Bill (Rs.)"
-        android:textSize="18sp"
         android:layout_alignBaseline="@+id/peb"
         android:layout_alignBottom="@+id/peb"
         android:layout_toLeftOf="@+id/textView9"
-        android:layout_toStartOf="@+id/textView9" />
+        android:layout_toStartOf="@+id/textView9"
+        android:text="@string/eb_bill_rs"
+        android:textColor="@color/bg_screen3"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/smit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="21dp" />
+        android:layout_marginBottom="21dp"
+        android:text="@string/submit"
+        android:textColor="@color/bg_screen3"
+        android:textColorLink="@color/dot_dark_screen2" />
 
 </RelativeLayout>

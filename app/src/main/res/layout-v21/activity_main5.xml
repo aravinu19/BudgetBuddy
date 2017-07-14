@@ -30,8 +30,7 @@
         android:layout_marginStart="19dp"
         android:text="@string/show_expense"
         android:textColor="?android:attr/colorPrimary"
-        android:textColorLink="@color/dot_dark_screen2"
-        tools:targetApi="lollipop" />
+        android:textColorLink="@color/dot_dark_screen2" />
 
     <Button
         android:id="@+id/v"
@@ -46,6 +45,5 @@
         android:text="@string/expense_of_a_day"
         android:textColor="?android:attr/colorPrimary"
         android:textColorLink="@color/dot_dark_screen2"
-        android:visibility="visible"
-        tools:targetApi="lollipop" />
+        android:visibility="visible" />
 </RelativeLayout>

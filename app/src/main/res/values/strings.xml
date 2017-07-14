@@ -6,4 +6,54 @@
     <string name="register">REGISTER</string>
     <string name="secure_login">Secure Login</string>
     <string name="password">password</string>
+    <string name="hey_buddy_new_in_here_join_me">Hey Buddy new in Here !!!, Join Me</string>
+    <string name="join_buddy">Join Buddy</string>
+    <string name="email_address">Email Address</string>
+    <string name="registration">Registration</string>
+    <string name="user_name1">User name</string>
+    <string name="details_form">Details Form</string>
+    <string name="eb_bill_rs">EB Bill (Rs.)</string>
+    <string name="living_in_rental_home">Living in Rental Home :</string>
+    <string name="monthly_home_rent_rs">Monthly Home Rent(Rs.):</string>
+    <string name="monthly_income_rs">Monthly Income (Rs.):</string>
+    <string name="submit">Submit</string>
+    <string name="year">YEAR</string>
+    <string name="day">Day</string>
+    <string name="expense_of_the_day">Expense Of the Day</string>
+    <string name="get_expense">Get Expense</string>
+    <string name="month">Month</string>
+    <string name="budget_manager">BUDGET MANAGER</string>
+    <string name="expense_of_a_day">Expense of a Day</string>
+    <string name="show_expense">Show Expense</string>
+    <string name="expense_of_the_day1">Expense Of The Day</string>
+    <string name="other_expense_rs">Other Expense (Rs.)</string>
+    <string name="save_data">Save Data</string>
+    <string name="spent_on_entertainment_rs">Spent On Entertainment(Rs.)</string>
+    <string name="spent_on_food_rs">Spent On Food(Rs.)</string>
+    <string name="spent_on_mobile_recharge_rs">Spent On Mobile Recharge(Rs.)</string>
+    <string name="spent_on_shopping_rs">Spent On Shopping(Rs.)</string>
+    <string name="spent_on_transportation_rs">Spent On Transportation(Rs.)</string>
+    <string name="textview">TextView</string>
+
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello Buddy!</string>
+    <string name="slide_1_desc">Can\'t keep track of expense spent on food!,I can track it</string>
+
+    <string name="slide_2_title">Spent in Movie</string>
+    <string name="slide_2_desc">I can track your expense for Entertainment and inform you based on your Budget!</string>
+
+    <string name="slide_3_title">Gone For Shopping!</string>
+    <string name="slide_3_desc">you guessed it, I can keep them in my mind and do the math for you!</string>
+
+    <string name="slide_4_title">Travel A Lot</string>
+    <string name="slide_4_desc">Me too , As i am your Buddy now right and let me track that expense and notify you!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="welcome_to_budget_buddy">Welcome To Budget Buddy</string>
 </resources>

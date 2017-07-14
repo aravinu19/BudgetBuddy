@@ -8,6 +8,7 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp"
+    android:background="@drawable/buddy"
     android:visibility="visible"
     tools:context="com.ivara.aravi.budgetbuddy.Main2Activity">
 
@@ -21,6 +22,7 @@
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="@string/secure_login"
+        android:textColor="@color/dot_dark_screen2"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -31,12 +33,21 @@
         android:id="@+id/et1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
+        android:fadingEdge="vertical"
+        android:gravity="right"
         android:hint="@string/user_name"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:textColorHint="@color/colorAccent"
+        tools:ignore="RtlHardcoded" />
 
     <EditText
         android:id="@+id/et2"
@@ -47,28 +58,41 @@
         android:layout_below="@+id/et1"
         android:layout_marginTop="44dp"
         android:ems="10"
+        android:fadingEdge="vertical"
+        android:gravity="right"
         android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:textColorHint="@color/colorAccent"
+        tools:ignore="RtlHardcoded" />
 
     <Button
         android:id="@+id/b1"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
         android:text="@string/login"
+        android:textColor="@color/dot_dark_screen2"
+        android:textColorHint="@color/dot_dark_screen2"
+        android:textColorLink="@android:color/holo_blue_bright"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/or"
+        android:layout_marginTop="47dp"
+        android:text="@string/hey_buddy_new_in_here_join_me"
+        android:textColor="@color/dot_dark_screen2"
         android:textSize="18sp"
         android:layout_below="@+id/b1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/b2"
@@ -76,8 +100,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="39dp"
+        android:layout_marginBottom="13dp"
         android:text="@string/register"
+        android:textColor="@color/dot_dark_screen2"
         android:textSize="18sp" />
 
 </RelativeLayout>
